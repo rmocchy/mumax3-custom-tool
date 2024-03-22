@@ -16,7 +16,7 @@ function mx3tool {
     if [ "$1" == "version" ]; then
         echo "current version : $current_version"
     elif [ "$1" == "health" ]; then
-        docker run --rm mumax3-custom-tool:lates -c "/app/tools/gpu-health-check/main.py" 
+        docker run --rm mumax3-custom-tool:latest /bin/bash -c "python3 /app/tools/gpu-health-check/main.py" 
     else
         echo "invalid command"
         showcommands

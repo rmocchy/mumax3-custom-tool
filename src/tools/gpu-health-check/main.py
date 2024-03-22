@@ -1,26 +1,24 @@
 # 実行時に仮想環境上にインストールするのでnot resolvedで問題ない
-import tensorflow as tf
-from tensorflow.python.client import device_lib
+import gpustat
 
 def main():
-    if (not tf.test.is_gpu_available()):
+    stats = gpustat.new_query()
+    if len(stats) == 0:
         print(
             "==========================\n"\
             " GPU is not available ...\n"\
             "==========================\n"
         )
         return
-    
-    gpus = tf.config.experimental.list_physical_devices('GPU')
-    print(
-            "==========================\n"\
-            " GPU is available !\n"\
-            "==========================\n"
+
+    for gpu in stats.gpus:
+        print(
+            "=======================\n"\
+            f"GPU-index   : {gpu.index}\n"\
+            f"Utilization : {gpu.utilization} %\n"\
+            f"memory usage: {gpu.memory_used}/{gpu.memory_total} MB \n"
+            "=======================\n"\
         )
-    for gpu in gpus:
-        print("GPUの読み込みが完了しました")
-        print(gpu)
     return
 
-if __name__ == "__main__":
-    main()
+main()
