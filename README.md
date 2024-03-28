@@ -71,7 +71,15 @@ https://zenn.dev/mozuku55/articles/32761c23aa4acf
 ### 2.初期構築
 本ディレクトリまで移動し、以下コマンドを実行してください
 ただしCUDAのバージョンが合致しない旨のエラーが出た場合にはDockerfileの修正をお願いします
-
+#### シンボリックリンクの作成
+```
+sudo ln -s $(pwd)/router.sh /usr/local/bin/mx3tool
+```
+#### 実行権限の付与
+```
+sudo sudo chmod +x /usr/local/bin/mx3tool
+```
+#### 仮想環境buildの実行
 ```
 bash init.sh
 ```
