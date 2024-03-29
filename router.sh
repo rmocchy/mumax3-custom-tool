@@ -16,7 +16,8 @@ function mx3tool {
     if [ "$1" == "version" ]; then
         echo "current version : $current_version"
     elif [ "$1" == "genmx3" ]; then
-        docker run --rm mumax3-custom-tool:latest /bin/bash -v $PWD:/gen-input -c "python3 /app/tools/gen-mx3.py && sudo chmod 777 -R /gen-input"
+        echo "start"
+        docker run -it --gpus all  --rm -v $PWD:/gen-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/tools/gen-mx3.py && chmod 777 -R /gen-async"
     else
         echo "invalid command"
         showcommands
