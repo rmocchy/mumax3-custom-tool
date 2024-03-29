@@ -20,11 +20,7 @@ function mx3tool {
         docker run -it --gpus all  --rm -v $PWD:/gen-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/tools/gen-mx3.py && chmod 777 -R /gen-async"
     elif [ "$1" == "simexec" ]; then
         echo "sim exec start"
-        # docker run -it --gpus all  --rm -v $PWD:/gen-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/mumax3-executer-main.py exec $(PWD)"
-        docker run -it --gpus all  --rm -v $PWD:/gen-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/mumax3-executer-main.py test $(PWD)"
-    elif [ "$1" == "simtest" ]; then
-        echo "sim test start"
-        docker run -it --gpus all  --rm -v $PWD:/gen-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/mumax3-executer-main.py test $(PWD)"
+        docker run -it --gpus all  --rm -v $PWD:/exec-async mumax3-custom-tool:latest /bin/bash -c "python3 /app/mumax3-executer/main.py exec /exec-async"
     else
         echo "invalid command"
         showcommands

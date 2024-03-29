@@ -29,7 +29,7 @@ def genmx3(dirpath):
                 print("Error : jsonには配列しか入りません")
                 return
             new_mx3 = new_mx3.replace(f"<<<{key}>>>",str(data[key][i]) )
-            new_path = os.path.join(dirpath, f"{convDict2NewName(data, i)}.mx0")
+            new_path = os.path.join(dirpath, f"{convDict2NewName(data, i)}.mx3")
             with open(new_path, 'w') as file:
                 file.write(new_mx3)
     return
