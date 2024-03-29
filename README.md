@@ -83,6 +83,10 @@ sudo sudo chmod +x /usr/local/bin/mx3tool
 ```
 bash init.sh
 ```
+permission deniedの場合は以下
+```
+sudo bash init.sh
+```
 こちらのコマンドでは以下作業が実行されます
 初期実行は1時間以上かかる可能性があります
 - /usr/local/bin/mx3toolのシンボリックリンクの構築

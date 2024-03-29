@@ -33,8 +33,8 @@ RUN ln -s /app/mumax3/mumax3.10_linux_cuda11.0/mumax3-server /usr/bin/mumax3-ser
 RUN ln -s /app/mumax3/mumax3.10_linux_cuda11.0/mumax3 /usr/bin/mumax3
 RUN ln -s /app/mumax3/mumax3.10_linux_cuda11.0/mumax3-convert /usr/bin/mumax3-convert
 # for test
-RUN In -s /app/mumax3-test/mumax3-conv-test.py /usr/bin/mumax3-convert-test
-RUN In -s /app/mumax3-test/mumax3-exec-test.py /usr/bin/mumax3-execute-test
+RUN ln -s /app/mumax3-test/mumax3-conv-test.py /usr/bin/mumax3-convert-test
+RUN ln -s /app/mumax3-test/mumax3-exec-test.py /usr/bin/mumax3-execute-test
 
 
 # Command to run the Python script
