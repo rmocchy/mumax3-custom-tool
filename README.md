@@ -98,18 +98,15 @@ sudo bash init.sh
 ```
 mx3tool version
 ```
-
-### GPUヘルスチェック(GPUが利用可能かどうかの確認)
-```
-mx3tool health
-```
-
 ### mx3ファイル(シミュレーション用ファイル)の生成
 ```
-mx3tool gen-mx3
+mx3tool genmx3
 ```
-
+### mx3シミュレーションの対象ファイルの表示
+```
+mx3tool simdryrun
+```
 ### mx3シミュレーションの実行
 ```
-mx3tool start
+mx3tool simexec
 ```

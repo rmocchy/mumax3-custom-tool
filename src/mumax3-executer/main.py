@@ -9,17 +9,19 @@ def main():
         print("src/mumax3-executer/main.py : not enough args")
         return
     abs_path = os.path.abspath(args[2]) 
-    if len(args) >= 3 and args[1] == 'test':
+    if len(args) >= 3 and args[1] == 'dryrun':
         execute_in_bulk(abs_path, True)
     if len(args) >= 3 and args[1] == 'exec':
         execute_in_bulk(abs_path, False)
     return
 
-def execute_in_bulk(dir_path:str, is_test:bool = False):
+def execute_in_bulk(dir_path:str, is_dryrun:bool = True):
     mx3_paths = find_mx3_files(dir_path)
     print(f"exec mx3 : {mx3_paths}")
     for mx3_path in mx3_paths:
-        Execute(mx3_path, is_test)
+        print(f"exec mx3 : {mx3_path}")
+        if not is_dryrun:
+            Execute(mx3_path, is_dryrun)
     return
 
 def find_mx3_files(dir_path:str):

@@ -1,7 +1,8 @@
 import subprocess as sp
 import os
 
-def Execute(path:str, is_test:bool = False):
+# def Execute(path:str, is_test:bool = False):
+def Execute(path:str):
     # mx3_exec_cmd = "mumax3-execute-test" if is_test else "mumax3" Testは実装後はこちら
     mx3_exec_cmd = "mumax3"
     # mx3_conv_cmd = "mumax3-convert-test" if is_test else "mumax3-convert" Testは実装後はこちら
